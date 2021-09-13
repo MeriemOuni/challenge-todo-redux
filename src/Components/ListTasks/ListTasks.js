@@ -27,13 +27,13 @@ const ListTasks = () => {
       </Button>
 
       {/* affichage selon la condition */}
-      {status == "done"
+      {status === "done"
         ? listtasks
-            .filter((el) => el.isDone == true)
+            .filter((el) => el.isDone === true)
             .map((el) => <Task task={el} key={el.id} />)
-        : status == "undone"
+        : status === "undone"
         ? listtasks
-            .filter((el) => el.isDone == false)
+            .filter((el) => el.isDone === false)
             .map((el) => <Task task={el} key={el.id} />)
         : listtasks.map((el) => <Task task={el} key={el.id} />)}
     </div>
